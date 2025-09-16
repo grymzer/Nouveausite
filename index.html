@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="neon">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mademoiselle Nina · Boutique en ligne</title>
+  <meta name="description" content="Créations artisanales uniques. Sélectionnez vos articles et envoyez votre commande en un clic." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="/" class="brand">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+        <span class="brand-text">Mademoiselle <strong>Nina</strong></span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a class="btn ghost" href="about.html">Notre histoire</a></li>
+          <li><a class="btn ghost" href="https://www.facebook.com/groups/111906250064/?locale=fr_FR" target="_blank">Aidons Agathe</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1 class="headline">Créations artisanales <span class="accent">uniques</span></h1>
+        <p class="subhead">Cliquez sur les articles pour les sélectionner, puis envoyez votre commande.</p>
+        <div class="order-info">
+          Articles sélectionnés : <span id="selected-count">0</span>
+        </div>
+        <a href="#produits" class="btn primary">Voir les produits</a>
+      </div>
+      <div class="hero-art">
+        <img src="/assets/hero-glow.webp" alt="Art abstrait lumineux" />
+      </div>
+    </section>
+  </header>
+
+  <main class="site-main">
+    <section id="produits" class="section-products container">
+      <div class="section-head">
+        <h2>Nos pièces</h2>
+        <div class="controls">
+          <label class="search">
+            <input type="search" id="search" placeholder="Rechercher…" />
+          </label>
+          <div class="filters">
+            <button class="chip" data-filter="all" aria-pressed="true">Tout</button>
+            <button class="chip" data-filter="nouveautes">Nouveautés</button>
+            <button class="chip" data-filter="bagues">Bagues</button>
+            <button class="chip" data-filter="colliers">Colliers</button>
+            <button class="chip" data-filter="bracelets">Bracelets</button>
+          </div>
+        </div>
+      </div>
+      <section id="product-grid" class="product-grid">
+        <!-- Articles insérés par JS -->
+      </section>
+      <div class="cart-cta">
+        <button id="send-email-button" class="btn cta">Envoyer la commande</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mademoiselle Nina</h3>
+        <p>Atelier de créations artisanales, pièces uniques et petites séries.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><a href="mailto:bonjour@mademoisellenina.fr">bonjour@mademoisellenina.fr</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <p>© 2024 Mademoiselle Nina. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="image-modal" class="modal" aria-modal="true" hidden>
+    <button class="modal-close">×</button>
+    <img class="modal-content" id="modal-image" alt="Aperçu du produit" />
+  </div>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <img src="" alt="" />
+      <h3 class="title"></h3>
+      <p class="desc"></p>
+      <div class="buy">
+        <span class="price"></span>
+        <button class="btn add" data-action="toggle-select" aria-pressed="false">Sélectionner</button>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
